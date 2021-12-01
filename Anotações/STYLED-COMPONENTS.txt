@@ -1,0 +1,36 @@
+
+Criando estilos globais:
+Crie um arquivo global.ts
+
+import {createGlobalStyle} from 'styled-components'
+
+  const GlobalStyle = createGlobalStyle`
+
+`
+Como criar variáveis no css:
+ 
+  :root{
+    --*tag*;
+   }
+  
+  body{
+  background:var(--*tag*)
+}
+
+
+Como boa prática de front-end, devemos nos atentar para o tamanho da fonte, para se adaptar a diferentes tipos de dispositivos e usuários, exemplo:
+
+ html{
+  @media (max-width:1080px){
+    font-size: 93.75%;
+  }
+}
+
+  @media (max-width:720px){
+    font-size:87.5%;
+  }
+
+
+Para usar diferentes tipos de fontes, as importamos no googleFonts
+
+

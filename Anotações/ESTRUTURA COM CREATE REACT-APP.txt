@@ -1,0 +1,13 @@
+Como iniciar um projeto react:
+  npx create react-app *nome do projeto* --template typescript ou
+  yarn create react-app *nome do projeto* --template typescript
+
+Padrão de criação de functions:
+  export *nome da functio* em vez de
+  export default *nome de function*
+
+Css in Javascript: Utilização de css com nomenclatura javascript, para facilidade do desenvolviento front end.
+  yarn add styled-components
+  
+Integração com Typescript:
+  yarn add @types/styled-components -D

@@ -1,0 +1,9 @@
+MirageJS é uma biblioteca react utilizada em situações que não temos um back-end, fazendo requisições fake.
+
+Configuração:
+
+yarn add miragejs
+
+Criação do servidor:
+
+Na pasta index.tsx na raiz do projeto
