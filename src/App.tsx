@@ -3,8 +3,9 @@ import { GlobalStyle } from './Global';
 import { Header } from './Header';
 import { Dashboard } from './Dashboard';
 import {useState} from 'react';
-import Modal from 'react-modal';
+
 import { NewTransactionModal } from './NewTransactionalModal';
+import { TransactionalContext } from './TransactionalContext';
 
 function App() {
 const [isNewTransactionalModalOpen,setIsNewTransactionalModalOpen] = useState(false);
@@ -18,17 +19,17 @@ const [isNewTransactionalModalOpen,setIsNewTransactionalModalOpen] = useState(fa
     }
   return (
    
-    <>
+    <TransactionalContext.Provider value={[]}>
      <GlobalStyle />
      <Header onOpenNewTransactionalModule={handleOpenNewTransactionalModal} />
        
      <NewTransactionModal 
         isOpen={isNewTransactionalModalOpen}
-        onRequestClose={handleOpenNewTransactionalModal}
+        onRequestClose={handleCloseNewTransactionalModal}
      />
      <Dashboard />
     
-    </>
+    </ TransactionalContext.Provider>
   );
 }
 

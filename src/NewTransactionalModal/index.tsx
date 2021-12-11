@@ -4,6 +4,7 @@ import closeimg from '../assets/close.svg';
 import incomeimg from '../assets/income.svg';
 import outcomeimg from '../assets/outcome.svg';
 import {FormEvent, useState} from 'react';
+import { api } from '../services/api';
 
 interface NewTransactionalModalProps{
  
@@ -11,10 +12,7 @@ interface NewTransactionalModalProps{
     onRequestClose:()=>void;
 }
 
-function handleCreateNewTransaction(event:FormEvent){
-    event.preventDefault();
 
-}
 
 export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionalModalProps){
     
@@ -22,12 +20,22 @@ export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionalMod
     const [title,setTitle]=useState('');
     const [desc,setDesc]=useState('');
     const [value,setValue]=useState(0);
-    console.log(
-        title,
-        desc,
-        value,
-    )
+    
+    function handleCreateNewTransaction(event:FormEvent){
+        event.preventDefault();
+    
+        const data =({
+            title,
+            desc,
+            value
+        
+        })
 
+       
+           
+        api.post("/transactions",data);
+      
+    }
     return(
 
   <Modal isOpen={isOpen}
@@ -39,14 +47,14 @@ export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionalMod
     <button type ="button" className="react-modal-close"
     onClick={onRequestClose}
     >
-       <img src ={closeimg}>
+       <img src ={closeimg} alt="close">
 
        </img>
     </button>    
            
      
  
-      <Container onClick={handleCreateNewTransaction}>
+      <Container onSubmit= {handleCreateNewTransaction}>
           <h2>Cadastrar transação</h2>
 
           <input
@@ -71,7 +79,7 @@ export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionalMod
                 isActive={type==='deposit'}
                >
                    
-                <img src = {incomeimg} alt="entradas">
+                <img src = {incomeimg} alt="entradas" >
 
                 </img>
                   <span>Entrada</span>

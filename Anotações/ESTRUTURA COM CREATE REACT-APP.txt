@@ -1,6 +1,7 @@
 Como iniciar um projeto react:
-  npx create react-app *nome do projeto* --template typescript ou
-  yarn create react-app *nome do projeto* --template typescript
+ npm i create-react-app -g
+  npx create-react-app *nome do projeto* --template typescript ou
+  yarn create-react-app *nome do projeto* --template typescript
 
 Padrão de criação de functions:
   export *nome da functio* em vez de
