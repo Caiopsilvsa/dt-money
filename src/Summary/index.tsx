@@ -7,7 +7,7 @@ import { TransactionalContext } from "../TransactionalContext"
 export function Summary(){
     
     const data = useContext(TransactionalContext);
-    console.log(data)
+   
     
     return(
      <Container >

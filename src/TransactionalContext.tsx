@@ -13,7 +13,7 @@ interface transactions {
 
 interface transactionsProviderProps{
     children:ReactNode;
-} 
+}; 
 
 export function transactionsProvider({children}:transactionsProviderProps){
     const [transaction,setTransaction] = useState<transactions[]>([]);

@@ -5,7 +5,7 @@ import { Dashboard } from './Dashboard';
 import {useState} from 'react';
 
 import { NewTransactionModal } from './NewTransactionalModal';
-import { TransactionalContext } from './TransactionalContext';
+import { TransactionalContext, transactionsProvider } from './TransactionalContext';
 
 function App() {
 const [isNewTransactionalModalOpen,setIsNewTransactionalModalOpen] = useState(false);
@@ -19,7 +19,7 @@ const [isNewTransactionalModalOpen,setIsNewTransactionalModalOpen] = useState(fa
     }
   return (
    
-    <TransactionalContext.Provider value={[]}>
+    <transactionsProvider>
      <GlobalStyle />
      <Header onOpenNewTransactionalModule={handleOpenNewTransactionalModal} />
        
@@ -29,7 +29,7 @@ const [isNewTransactionalModalOpen,setIsNewTransactionalModalOpen] = useState(fa
      />
      <Dashboard />
     
-    </ TransactionalContext.Provider>
+    </transactionsProvider>
   );
 }
 
